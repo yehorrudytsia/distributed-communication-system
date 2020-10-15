@@ -1,0 +1,27 @@
+{
+  "name": "Distributed-Communication-System",
+  "version": "0.0.1",
+  "author": "yegorrudica",
+  "license": "MIT",
+  "keywords": [
+    "Communication-System"
+  ],
+  "main": "test.js",
+  "scripts": {
+    "test": "npm run -s lint",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yegorrudica/Distributed-Communication-System.git"
+  },
+  "homepage": "https://github.com/yegorrudica/Distributed-Communication-System",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "prettier": "1.19.x"
+  },
+  "dependencies": {}
+}
