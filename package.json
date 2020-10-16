@@ -8,7 +8,7 @@
   ],
   "main": "test.js",
   "scripts": {
-    "test": "npm run -s lint",
+    "test": "npm run -s lint && node tests/main.js",
     "lint": "eslint . && prettier -c \"**/*.js\""
   },
   "repository": {

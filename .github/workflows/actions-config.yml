@@ -16,5 +16,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-      - run: npm install -g bats
-      - run: bats -v
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
