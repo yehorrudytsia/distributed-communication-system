@@ -16,10 +16,4 @@ EventEmitter.prototype.emit = function(name, ...data) {
   for (const listener of event) listener(...data);
 };
 
-const eventEmitter = new EventEmitter();
-
-eventEmitter.on('blaow', data => {
-  console.dir(data);
-});
-
-eventEmitter.emit('blaow', { snap: 'back' });
+module.exports = EventEmitter;
