@@ -9,4 +9,6 @@ eventEmitter.on('blaow', data => {
   console.dir(data);
 });
 
+eventEmitter.emit('blaow', { snap: 'back' });
+
 assert.equal(typeof eventEmitter, 'object');
