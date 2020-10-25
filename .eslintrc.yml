@@ -18,9 +18,6 @@ rules:
         let: 2
         const: 3
       MemberExpression: 1
-  linebreak-style:
-    - error
-    - windows
   quotes:
     - error
     - single
