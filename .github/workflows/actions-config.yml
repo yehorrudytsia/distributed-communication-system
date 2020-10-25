@@ -3,10 +3,10 @@ name: actions-config
 on:
   push:
     branches:
-      -main
+      - main
   pull_request:
     branches:
-      -main
+      - main
 
 jobs:
   check-bats-version:
