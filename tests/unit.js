@@ -1,6 +1,6 @@
 'use strict';
 
-const tests = ['eventEmitter'];
+const tests = [''];
 
 for (const test of tests) {
   console.log(`Test unit: ${test}`);
