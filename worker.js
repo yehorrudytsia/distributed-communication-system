@@ -1,40 +1,37 @@
 'use strict';
+const PATH = process.cwd();
 
-const { Worker } = require('worker_threads');
+const { worker, fsp, path } = require('./lib/libs.js');
+const { threadId } = worker;
 
-const PORTS_NUMBER = 2;
-
-const workers = [];
-const path = require('path');
-
+const App = require('./lib/app.js');
 const Config = require('./lib/config.js');
 
-const PATH = process.cwd();
-const CONFIG_PATH = path.join(PATH, 'config');
 
 (async () => {
-  const config = await new Config(CONFIG_PATH);
+  const configPath = path.join(PATH, 'config');
+  const config = await new Config(configPath);
   const { units } = config;
-  const count = PORTS_NUMBER;
-  const workers = new Array(count);
+  const app = new App();
+  Object.assign(app, { config });
+  setTimeout(() => {
+    console.log(`Application started in worker ${threadId}`);
+  }, 50);
 
-  const start = id => {
-    const worker = new Worker('./worker.js');
-    workers[id] = worker;
-    worker.on('exit', code => {
-      if (code !== 0) start(id);
-    });
+  worker.parentPort.on('message', async message => {
+    if (message.name === 'stop') {
+      if (app.closed) return;
+      console.log(`Graceful shutdown in worker ${threadId}`);
+      await app.shutdown();
+      process.exit(0);
+    }
+  });
+
+  const logError = err => {
+    console.dir(err);
   };
 
-  for (let id = 0; id < count; id++) start(id);
-
-
-  process.on('SIGINT', async () => {
-  console.log('Got exit signal');
-  for (let i = 0; i < PORTS_NUMBER; ++i)
-  {
-    workers[i].postMessage({ name: 'stop' });
-  }
-});
-
+  process.on('uncaughtException', logError);
+  process.on('warning', logError);
+  process.on('unhandledRejection', logError);
 })();
