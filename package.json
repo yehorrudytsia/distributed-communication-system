@@ -9,7 +9,7 @@
   "main": "test.js",
   "scripts": {
     "test": "node tests/main.js",
-    "lint": "eslint . && prettier -c \"**/*.js\""
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",

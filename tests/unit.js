@@ -1,6 +1,6 @@
 'use strict';
 
-const tests = [''];
+const tests = ['config'];
 
 for (const test of tests) {
   console.log(`Test unit: ${test}`);
