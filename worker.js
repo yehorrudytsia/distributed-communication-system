@@ -12,11 +12,13 @@ const Server = require('./lib/server.js');
 const Sessions = require('./lib/sessions.js');
 
 (async () => {
+  const configPath = path.join(PATH, 'config');
+  const config = await new Config(configPath);
+  const { units } = config;
+  const app = new App();
+  Object.assign(app, { config });
   setTimeout(() => {
-    const configPath = path.join(PATH, 'config');
-    const config = await new Config(configPath);
-    const app = new App();
-    Object.assign(app, { config });
+    console.dir(config)
     app.db = new Database(config.units.database, app);
     app.server = new Server(config.units.server, app);
     app.sessions = Sessions(app);

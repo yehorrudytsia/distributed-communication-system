@@ -21,12 +21,13 @@ const buildAPI = methods => {
 };
 
 const api = buildAPI([
-  'gerUser',
+  'getUser',
 ]);
 
 const getUser = async () => {
-  const result = await api.signIn({ login: 'jacquefresco', password: 'fresco' });
+  const result = await api.getUser('jacquefresco');
   const output = document.getElementById('output');
+  console.log(result);
   output.innerHTML = 'HTTP GET /api/getUser<br>' + JSON.stringify(result);
 };
 
