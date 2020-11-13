@@ -1,0 +1,2 @@
+CREATE USER venus WITH PASSWORD 'venus';
+CREATE DATABASE dcs OWNER venus;
