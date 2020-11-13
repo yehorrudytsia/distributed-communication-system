@@ -18,7 +18,8 @@ jobs:
           node-version: '14.x'
       - run: npm ci
       - run: npm run build --if-present
+  #    - run: psql -f init.sql -U postgres
+  #    - run: PGPASSWORD=venus psql -d dcs -f tables.sql -U venus
+  #    - run: PGPASSWORD=venus psql -d dcs -f data.sql -U venus
       - name: tests
         run: npm test
-      - name: linter
-        run: npm run lint

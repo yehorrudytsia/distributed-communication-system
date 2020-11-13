@@ -1,6 +1,7 @@
 env:
   es6: true
   node: true
+parser: babel-eslint
 plugins:
   - sonarjs
 extends:
@@ -29,9 +30,6 @@ rules:
     - always
   no-loop-func:
     - error
-  strict:
-    - error
-    - global
   block-spacing:
     - error
     - always
