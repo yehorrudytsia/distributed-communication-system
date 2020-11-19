@@ -14,7 +14,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    container: node:10.18-jessie
     strategy:
       matrix:
         node-version: [12.x, 14.x]
