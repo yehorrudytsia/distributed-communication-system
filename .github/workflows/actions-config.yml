@@ -1,18 +1,23 @@
 name: actions-config
 
-on: push
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
 
+    runs-on: ubuntu-latest
+    container: node:10.18-jessie
     strategy:
       matrix:
-        node:
-          - 12
-          - 14
-        os:
-          - ubuntu-latest
+        node-version: [12.x, 14.x]
 
     services:
       postgres:
@@ -29,20 +34,21 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node }}
-      - run: npm ci
-      - name: Connect to PostgreSQL
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - name: Tests
+      run: npm test
+    - name: Connect to PostgreSQL
       # Runs a script that creates a PostgreSQL client, populates
       # the client with data, and retrieves data
-        run: node client.js
+      run: node client.js
       # Environment variable used by the `client.js` script to create a new PostgreSQL client.
-        env:
+      env:
         # The hostname used to communicate with the PostgreSQL service container
-          POSTGRES_HOST: postgres
+        POSTGRES_HOST: postgres
         # The default PostgreSQL port
-          POSTGRES_PORT: 5432
-      - run: npm test
+        POSTGRES_PORT: 5432
