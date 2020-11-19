@@ -1,55 +1,54 @@
-name: actions-config
+name: Testing CI
 
-on:
-  push:
-    branches:
-      - main
-      - dev
-  pull_request:
-    branches:
-      - main
-
+on: pull_request
 
 jobs:
   build:
+    runs-on: ${{ matrix.os }}
 
-    runs-on: ubuntu-latest
-    container: node:10.18-jessie
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        node:
+          - 12
+          - 14
+        os:
+          - ubuntu-latest
 
     services:
-      # Label used to access the service container
       postgres:
-        # Docker Hub image
-        image: postgres
-        # Provide the password for postgres
+        image: postgres:11.8
         env:
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-        # Set health checks to wait until postgres has started
+          POSTGRES_DB: db_test
+        ports:
+          - 5432/tcp
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - name: Tests
-      run: npm test
-    - name: Connect to PostgreSQL
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Connect to PostgreSQL
       # Runs a script that creates a PostgreSQL client, populates
       # the client with data, and retrieves data
-      run: node client.js
+        run: node client.js
       # Environment variable used by the `client.js` script to create a new PostgreSQL client.
-      env:
+        env:
         # The hostname used to communicate with the PostgreSQL service container
-        POSTGRES_HOST: postgres
+          POSTGRES_HOST: postgres
         # The default PostgreSQL port
-        POSTGRES_PORT: 5432
+          POSTGRES_PORT: 5432
+      - run: npm ci
+      - run: npm test
