@@ -40,8 +40,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - name: Tests
-      run: npm test
     - name: Connect to PostgreSQL
       # Runs a script that creates a PostgreSQL client, populates
       # the client with data, and retrieves data
@@ -52,3 +50,5 @@ jobs:
         POSTGRES_HOST: postgres
         # The default PostgreSQL port
         POSTGRES_PORT: 5432
+    - name: Tests
+      run: npm test      
