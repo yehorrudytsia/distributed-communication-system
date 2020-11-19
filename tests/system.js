@@ -48,8 +48,6 @@ const tasks = [
   },
 ];
 
-console.log('System test started');
-
 
 const getRequest = task => {
   const request = {

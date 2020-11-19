@@ -40,9 +40,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: tests
-      run: npm test        
     - run: npm ci
+    - name: Tests
+      run: npm test
     - name: Connect to PostgreSQL
       # Runs a script that creates a PostgreSQL client, populates
       # the client with data, and retrieves data
