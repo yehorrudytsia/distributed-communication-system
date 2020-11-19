@@ -40,6 +40,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+      - run: npm ci
       - name: Connect to PostgreSQL
       # Runs a script that creates a PostgreSQL client, populates
       # the client with data, and retrieves data
@@ -50,5 +51,4 @@ jobs:
           POSTGRES_HOST: postgres
         # The default PostgreSQL port
           POSTGRES_PORT: 5432
-      - run: npm ci
       - run: npm test
