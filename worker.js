@@ -12,6 +12,7 @@ const Server = require('./lib/server.js');
 const Sessions = require('./lib/sessions.js');
 const stats = require('./domain/getStatistics.js');
 const bytestoSize = require('./domain/bytestoSize.js');
+const resourceMonitoring = require('./init/logMonitoring.js');
 
 (async () => {
   const configPath = path.join(PATH, 'config');
@@ -28,6 +29,7 @@ const bytestoSize = require('./domain/bytestoSize.js');
     app.sandbox = app.createSandbox();
     app.sessions.fillPool();
     console.log(`Application up in worker ${threadId}`);
+    resourceMonitoring(app);
  }, 200);
 
   worker.parentPort.on('message', async message => {

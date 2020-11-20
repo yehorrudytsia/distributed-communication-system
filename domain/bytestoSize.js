@@ -1,6 +1,6 @@
 'use strict';
 
-const SIZE = ['', ' Kb', ' Mb', ' Gb', ' Tb', ' Pb', ' Eb', ' Zb', ' Yb'];
+const SIZE = ['', ' Kb', ' Mb', ' Gb'];
 
 const bytesToSize = bytes => {
   if (bytes === 0) return '0';
