@@ -1,3 +1,3 @@
 module.exports = {
-  interval: 10000,
+  interval: 60000,
 };

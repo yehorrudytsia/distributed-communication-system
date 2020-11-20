@@ -30,17 +30,10 @@ jobs:
           - 5432:5432
 
     steps:
-<<<<<<< HEAD
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-      - run: npm ci
-      - run: npm run build --if-present
-=======
-      # Downloads a copy of the code in your repository before running CI tests
-      - name: Check out repository code
-        uses: actions/checkout@v2
 
       # Performs a clean installation of all dependencies in the `package.json` file
       # For more information, see https://docs.npmjs.com/cli/ci.html
@@ -58,8 +51,5 @@ jobs:
           POSTGRES_HOST: localhost
           # The default PostgreSQL port
           POSTGRES_PORT: 5432
->>>>>>> 43a36ca44faa3c889d0dfdfc4e165eb76511ace4
       - name: tests
         run: npm test
-      - name: linter
-        run: npm run lint
