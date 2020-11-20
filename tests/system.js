@@ -42,14 +42,14 @@ const generateSeq = () => {
 
 const tasks = [
   { get: '/', status: 302 },
-  {
-    post: '/api/getUser',
-    data: { login: 'berniesanders' }
-  },
 ];
 
-console.log('System test started');
-
+const onDelay = [
+  {
+  post: '/api/getUser',
+  data: { login: 'berniesanders' }
+  },
+];
 
 const getRequest = task => {
   const request = {

@@ -10,6 +10,9 @@ const Config = require('./lib/config.js');
 const Database = require('./lib/queryBuilder.js');
 const Server = require('./lib/server.js');
 const Sessions = require('./lib/sessions.js');
+const stats = require('./domain/getStatistics.js');
+const bytestoSize = require('./domain/bytestoSize.js');
+const resourceMonitoring = require('./init/logMonitoring.js');
 
 (async () => {
   const configPath = path.join(PATH, 'config');
@@ -22,10 +25,11 @@ const Sessions = require('./lib/sessions.js');
     app.db = new Database(config.units.database, app);
     app.server = new Server(config.units.server, app);
     app.sessions = Sessions(app);
-    app.sandboxInject({ sessions: app.sessions });
+    app.sandboxInject({ sessions: app.sessions, stats, bytestoSize });
     app.sandbox = app.createSandbox();
     app.sessions.fillPool();
     console.log(`Application up in worker ${threadId}`);
+    resourceMonitoring(app);
  }, 200);
 
   worker.parentPort.on('message', async message => {

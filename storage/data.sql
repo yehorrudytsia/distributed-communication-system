@@ -3,6 +3,7 @@ VALUES ('jacquefresco', '$scrypt$N=32768,r=8,p=1,maxmem=67108864$XWzCkBbnH/pAxX2
 
 -- jacquefresco/fresco
 
+
 INSERT INTO SystemUsers (Login, Password, FullName)
 VALUES ('berniesanders', '$scrypt$N=32768,r=8,p=1,maxmem=67108864$mcxTrmH7sfoZ9AcyT3Cn0fJVrdgqru0tyS+9wgd9G30$urEA98iGveO8lp85w7F32yE9HOxcTGbnBfrR3xqQcwnAvdTamjZo3Ezrs1yg6P4ODkoKNBKPo/whOmJ5u76cew', 'Bernie Sanders');
 
