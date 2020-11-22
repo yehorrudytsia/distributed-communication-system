@@ -26,9 +26,9 @@ jobs:
             ${{ runner.os }}-node-
       - uses: harmon758/postgresql-action@v1
         with:
-          postgresql version: '12'
-          postgresql db: 'dcs'
-          postgresql user: 'venus'
-          postgresql password: 'venus'
+      #    postgresql version: '12'
+          POSTGRES_DB: 'dcs'
+          POSTGRES_USER: 'venus'
+          POSTGRES_PASSWORD: 'venus'
       - name: Tests
         run: npm test
