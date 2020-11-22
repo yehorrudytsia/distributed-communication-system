@@ -5,53 +5,24 @@ on:
           - dev
           - pg-container
 
+
 jobs:
-  # Label of the runner job
-  runner-job:
-    # You must use a Linux environment when using service containers or container jobs
+  build:
+    name: Test
     runs-on: ubuntu-latest
-    container: node:10.18-jessie
-
-    # Service containers to run with `runner-job`
-    services:
-      # Label used to access the service container
-      postgres:
-        # Docker Hub image
-        image: postgres:12
-        # Provide the password for postgres
-        env:
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-    #    ports:
-          # Maps tcp port 5432 on service container to the host
-    #      - 5432:5432
-
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-
-      # Performs a clean installation of all dependencies in the `package.json` file
-      # For more information, see https://docs.npmjs.com/cli/ci.html
       - name: Install dependencies
         run: npm ci
-      - run: npm run build --if-present
+      - uses: harmon758/postgresql-action@v1
+        with:
+          postgresql version: '12.2'
+          postgresql db: dcs
+          postgresql user: venus
+          postgresql password: venus
 
-      - name: Connect to PostgreSQL
-        # Runs a script that creates a PostgreSQL client, populates
-        # the client with data, and retrieves data
-        run: node client.js
-        # Environment variable used by the `client.js` script to create
-        # a new PostgreSQL client.
-        env:
-          # The hostname used to communicate with the PostgreSQL service container
-          POSTGRES_HOST: postgres
-          # The default PostgreSQL port
-          POSTGRES_PORT: 5432
-      - name: tests
+      - name: Tests
         run: npm test
