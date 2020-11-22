@@ -19,7 +19,6 @@ jobs:
         image: postgres:12-alpine
         # Provide the password for postgres
         env:
-          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
