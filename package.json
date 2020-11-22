@@ -8,7 +8,7 @@
   ],
   "main": "test.js",
   "scripts": {
-    "test": "node tests/main.js",
+    "test": "node --experimental-worker tests/main.js",
     "lint": "eslint ."
   },
   "repository": {
