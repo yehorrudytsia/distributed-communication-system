@@ -36,10 +36,11 @@ const login = async () => {
 
   let user = {
                 login : document.getElementById("logLoginInput").value,
+                password : document.getElementById("logPasswordInput").value
             };
 
-  console.dir(user);
-  const id = await api.getUser(user)
+  //console.dir(user);
+  const id = await api.getUser(user.login)
       .catch(err => (err))
       .then(setTimeout(() => {
         document.getElementById('output')
@@ -49,5 +50,8 @@ const login = async () => {
   document
       .getElementById('output')
       .innerHTML = 'Success!'
+
+  console.dir(id)
+  console.log(id)
 }
 login();
