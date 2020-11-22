@@ -3,6 +3,7 @@ on:
         branches:
           - main
           - dev
+          - pg-container
 
 jobs:
   # Label of the runner job
@@ -18,9 +19,8 @@ jobs:
         image: postgres:12-alpine
         # Provide the password for postgres
         env:
-          POSTGRES_USER: venus
-          POSTGRES_PASSWORD: venus
-          POSTGRES_DB: dcs
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
