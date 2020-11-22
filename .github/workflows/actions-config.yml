@@ -15,11 +15,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-      - name: Install dependencies
-        run: npm ci
       - uses: harmon758/postgresql-action@v1
         with:
-          postgresql version: '11'
-
+          postgresql version: '12'
+          postgresql db: 'dcs'
+          postgresql user: 'venus'
+          postgresql password: 'venus'
+      - name: Install dependencies
+        run: npm ci
       - name: Tests
         run: npm test
