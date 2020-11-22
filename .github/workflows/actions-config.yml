@@ -19,9 +19,7 @@ jobs:
         run: npm ci
       - uses: harmon758/postgresql-action@v1
         with:
-          postgresql db: 'dcs'
-          postgresql user: 'venus'
-          postgresql password: 'venus'
+          postgresql version: '11'
 
       - name: Tests
         run: npm test
