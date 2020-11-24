@@ -62,6 +62,9 @@
 </style>
 
 
+    
+    
+    
 <div id="page">
 
 
@@ -75,8 +78,15 @@
         </ul>
     </div>
     <div id="content">
-        <div id="addmessage"></div>
-        <div id="messages"></div>
+        <div id="addmessage">
+        <form >
+        <p><b>Add new message:</b></p>
+        <p><textarea id="newMessage"></textarea></p>
+        <p><input type="submit" onclick="addMessageDiv()"></p>
+        </form>
+        
+        </div>
+        <div id="messages" style="overflow-y: scroll"></div>
     </div>
     
 </div>
@@ -91,6 +101,17 @@
 </center> --> 
     
 
+    <script>
+    function addMessageDiv(){
+        event.preventDefault()
+        let userName = "user123" // read from data
+        let messagesDiv = document.getElementById("messages");
+        let messageContent = document.getElementById("newMessage").value
+        messagesDiv.innerHTML += "<div> User : " + userName + "</div>";
+        messagesDiv.innerHTML += "<div>" + messageContent + "</div>";
+         messagesDiv.innerHTML += "<br>"
+    }
+    </script>
 
   <script src="scripts/app.js" async></script>
 
