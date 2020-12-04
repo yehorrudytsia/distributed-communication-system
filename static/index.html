@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Green New App</title>
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="client.js" type="module"></script>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -22,19 +23,19 @@
 
 
 <style>
-   
+
     #page{
-        
+
         display: grid;
         grid-template-columns: 1fr 6fr;
         grid-template-areas:
             "sm cnt";
-        
+
         background-color: #96DBE8;
         height: 690px;
         width: 1500px;
     }
-    
+
     #sidemenu{
         grid-area: sm;
         height: 690px;
@@ -54,7 +55,7 @@
     #addmessage{
         grid-area: am;
         background-color: #EBC68E;
-        
+
     }
     #messages{
         grid-area: ms;
@@ -62,9 +63,9 @@
 </style>
 
 
-    
-    
-    
+
+
+
 <div id="page">
 
 
@@ -84,22 +85,22 @@
         <p><textarea id="newMessage"></textarea></p>
         <p><input type="submit" onclick="addMessageDiv()"></p>
         </form>
-        
+
         </div>
         <div id="messages" style="overflow-y: scroll"></div>
     </div>
-    
+
 </div>
 
-    
+
 
 
 <!--<center>
   <h1>Progressive Web Application</h1>
   by TeamA organization<br/>
 <img src="img/green.jpg" alt="logo image" />
-</center> --> 
-    
+</center> -->
+
 
     <script>
     function addMessageDiv(){

@@ -22,9 +22,12 @@ const buildAPI = methods => {
 
 const api = buildAPI([
   'getUser',
+  'signIn',
 ]);
 
 const getUser = async () => {
+  const signIn = await api.signIn({ login: 'berniesanders', password: 'GreenNewDeal' });
+  console.log(signIn);
   const result = await api.getUser('jacquefresco');
   const output = document.getElementById('output');
   console.log(result);

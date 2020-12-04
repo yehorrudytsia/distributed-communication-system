@@ -27,7 +27,7 @@ const resourceMonitoring = require('./init/logMonitoring.js');
     app.sessions = Sessions(app);
     app.sandboxInject({ sessions: app.sessions, stats, bytestoSize });
     app.sandbox = app.createSandbox();
-    app.sessions.fillPool();
+    app.sessions.fillVMPool();
     console.log(`Application up in worker ${threadId}`);
     resourceMonitoring(app);
  }, 200);
