@@ -21,7 +21,7 @@ const resourceMonitoring = require('./init/logMonitoring.js');
   const app = new App();
   Object.assign(app, { config });
   setTimeout(() => {
-    console.dir(config)
+
     app.db = new Database(config.units.database, app);
     app.server = new Server(config.units.server, app);
     app.sessions = Sessions(app);

@@ -1,0 +1,51 @@
+Statistical profiling result from isolate-0x7f6020000de0-34225-v8.log, (140315 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+    135    0.1%          /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+      1    0.0%          /usr/lib64/libc-2.30.so
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+
+ [C++]:
+   ticks  total  nonlib   name
+  140142   99.9%  100.0%  epoll_wait
+     18    0.0%    0.0%  __lll_lock_wait
+      4    0.0%    0.0%  __GI___libc_write
+      3    0.0%    0.0%  fwrite
+      2    0.0%    0.0%  do_futex_wait.constprop.0
+      2    0.0%    0.0%  __pthread_cond_signal
+      2    0.0%    0.0%  __GI___mprotect
+      1    0.0%    0.0%  sysmalloc
+      1    0.0%    0.0%  operator new(unsigned long)
+      1    0.0%    0.0%  _int_free
+      1    0.0%    0.0%  __GI___pthread_mutex_lock
+      1    0.0%    0.0%  __GI___mmap
+      1    0.0%    0.0%  __GI___libc_malloc
+
+ [Summary]:
+   ticks  total  nonlib   name
+      0    0.0%    0.0%  JavaScript
+  140179   99.9%  100.0%  C++
+     40    0.0%    0.0%  GC
+    136    0.1%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+      2   25.0%    0.0%  fwrite
+      1   12.5%    0.0%  sysmalloc
+      1   12.5%    0.0%  operator new(unsigned long)
+      1   12.5%    0.0%  __lll_lock_wait
+      1   12.5%    0.0%  __GI___pthread_mutex_lock
+      1   12.5%    0.0%  __GI___libc_write
+      1   12.5%    0.0%  __GI___libc_malloc
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  140142   99.9%  epoll_wait
+
