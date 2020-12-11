@@ -4,6 +4,5 @@ module.exports = {
   database: 'dcs',
   user: 'venus',
   password: 'venus',
-  idleTimeoutMillis: 0,
-  connectionTimeoutMillis: 0,
+  max: 1,
 };

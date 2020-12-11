@@ -1,0 +1,445 @@
+Statistical profiling result from isolate-0x7f9e04000de0-42157-v8.log, (9860 ticks, 5 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   3372   34.2%          /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+     20    0.2%          /usr/lib64/libc-2.30.so
+      2    0.0%          [vdso]
+      2    0.0%          /usr/lib64/libstdc++.so.6.0.27
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     17    0.2%    0.3%  LazyCompile: *value internal/console/constructor.js:248:20
+     16    0.2%    0.2%  LazyCompile: *writeOrBuffer _stream_writable.js:334:23
+     16    0.2%    0.2%  LazyCompile: *processTicksAndRejections internal/process/task_queues.js:65:35
+     13    0.1%    0.2%  LazyCompile: *Readable.read _stream_readable.js:390:35
+     11    0.1%    0.2%  LazyCompile: *emit events.js:263:44
+      9    0.1%    0.1%  LazyCompile: *insert internal/timers.js:345:16
+      9    0.1%    0.1%  LazyCompile: *hidden internal/errors.js:285:25
+      9    0.1%    0.1%  LazyCompile: *formatValue internal/util/inspect.js:737:21
+      9    0.1%    0.1%  LazyCompile: *api /home/yehor/Gitlab/distributed-communication-system/lib/server.js:58:13
+      9    0.1%    0.1%  LazyCompile: *_release /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-pool/index.js:304:11
+      8    0.1%    0.1%  LazyCompile: *Readable.on _stream_readable.js:857:33
+      7    0.1%    0.1%  LazyCompile: *readableAddChunk _stream_readable.js:231:26
+      7    0.1%    0.1%  LazyCompile: *query /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/client.js:496:8
+      7    0.1%    0.1%  LazyCompile: *parse /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/parser.js:28:10
+      7    0.1%    0.1%  LazyCompile: *nextTick internal/process/task_queues.js:101:18
+      6    0.1%    0.1%  RegExp: (?<=\n)
+      6    0.1%    0.1%  LazyCompile: *where /home/yehor/Gitlab/distributed-communication-system/lib/queryBuilder.js:7:15
+      6    0.1%    0.1%  LazyCompile: *parserOnHeadersComplete _http_common.js:75:33
+      6    0.1%    0.1%  LazyCompile: *handleReadyForQuery /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:133:22
+      6    0.1%    0.1%  LazyCompile: *handlePacket /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/parser.js:93:17
+      6    0.1%    0.1%  LazyCompile: *formatRaw internal/util/inspect.js:806:19
+      4    0.0%    0.1%  LazyCompile: *writeHead _http_server.js:250:19
+      4    0.0%    0.1%  LazyCompile: *string /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/buffer-reader.js:30:11
+      4    0.0%    0.1%  LazyCompile: *prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      4    0.0%    0.1%  LazyCompile: *inspect internal/util/inspect.js:283:17
+      4    0.0%    0.1%  LazyCompile: *getEncodingOps buffer.js:679:24
+      4    0.0%    0.1%  LazyCompile: *get internal/console/constructor.js:193:14
+      4    0.0%    0.1%  LazyCompile: *cstring /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/buffer-reader.js:35:12
+      4    0.0%    0.1%  LazyCompile: *clearBuffer _stream_writable.js:493:21
+      4    0.0%    0.1%  LazyCompile: *addFields /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/result.js:80:12
+      4    0.0%    0.1%  LazyCompile: *addCString /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/buffer-writer.js:36:15
+      3    0.0%    0.0%  LazyCompile: *submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      3    0.0%    0.0%  LazyCompile: *resOnFinish _http_server.js:756:21
+      3    0.0%    0.0%  LazyCompile: *removeListener events.js:451:28
+      3    0.0%    0.0%  LazyCompile: *readInt32BE internal/buffer.js:474:21
+      3    0.0%    0.0%  LazyCompile: *processPromiseRejections internal/process/promises.js:190:34
+      3    0.0%    0.0%  LazyCompile: *flush /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/buffer-writer.js:71:10
+      3    0.0%    0.0%  LazyCompile: *callback _stream_writable.js:511:44
+      3    0.0%    0.0%  LazyCompile: *addString /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/buffer-writer.js:49:14
+      3    0.0%    0.0%  LazyCompile: *Readable.push _stream_readable.js:222:35
+      2    0.0%    0.0%  RegExp: ^([A-Za-z]+)(?: (\d+))?(?: (\d+))?
+      2    0.0%    0.0%  LazyCompile: *unenroll timers.js:76:18
+      2    0.0%    0.0%  LazyCompile: *slice buffer.js:608:12
+      2    0.0%    0.0%  LazyCompile: *parserOnIncoming _http_server.js:809:26
+      2    0.0%    0.0%  LazyCompile: *onwrite _stream_writable.js:394:17
+      2    0.0%    0.0%  LazyCompile: *onStreamRead internal/stream_base_commons.js:165:22
+      2    0.0%    0.0%  LazyCompile: *maybeReadMore_ _stream_readable.js:600:24
+      2    0.0%    0.0%  LazyCompile: *log internal/console/constructor.js:347:6
+      2    0.0%    0.0%  LazyCompile: *int16 /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/buffer-reader.js:15:10
+      2    0.0%    0.0%  LazyCompile: *handleRowDescription /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:73:23
+      2    0.0%    0.0%  LazyCompile: *getUser /home/yehor/Gitlab/distributed-communication-system/lib/sessions.js:134:19
+      2    0.0%    0.0%  LazyCompile: *getRunInContextArgs vm.js:158:29
+      2    0.0%    0.0%  LazyCompile: *get _stream_writable.js:710:8
+      2    0.0%    0.0%  LazyCompile: *formatProperty internal/util/inspect.js:1681:24
+      2    0.0%    0.0%  LazyCompile: *end _http_outgoing.js:769:45
+      2    0.0%    0.0%  LazyCompile: *dir internal/console/constructor.js:357:6
+      2    0.0%    0.0%  LazyCompile: *assignSocket _http_server.js:220:62
+      2    0.0%    0.0%  LazyCompile: *_send /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:137:8
+      2    0.0%    0.0%  LazyCompile: *Timeout.refresh internal/timers.js:205:37
+      2    0.0%    0.0%  LazyCompile: *Timeout internal/timers.js:162:17
+      2    0.0%    0.0%  LazyCompile: *Socket.read net.js:620:33
+      2    0.0%    0.0%  LazyCompile: *<anonymous> internal/worker/io.js:234:26
+      1    0.0%    0.0%  RegExp: [^\t\x20-\x7e\x80-\xff]
+      1    0.0%    0.0%  RegExp: [\x00-\x1f\x27\x5c\x7f-\x9f]
+      1    0.0%    0.0%  LazyCompile: *writevGeneric internal/stream_base_commons.js:118:23
+      1    0.0%    0.0%  LazyCompile: *validateOffset buffer.js:103:24
+      1    0.0%    0.0%  LazyCompile: *validateNumber internal/validators.js:127:24
+      1    0.0%    0.0%  LazyCompile: *toString buffer.js:776:46
+      1    0.0%    0.0%  LazyCompile: *resume _stream_readable.js:958:16
+      1    0.0%    0.0%  LazyCompile: *remove internal/linkedlist.js:15:16
+      1    0.0%    0.0%  LazyCompile: *reduceToSingleString internal/util/inspect.js:1765:30
+      1    0.0%    0.0%  LazyCompile: *parserOnBody _http_common.js:129:22
+      1    0.0%    0.0%  LazyCompile: *parseField /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/parser.js:187:15
+      1    0.0%    0.0%  LazyCompile: *onParserExecuteCommon _http_server.js:658:31
+      1    0.0%    0.0%  LazyCompile: *join internal/util.js:327:14
+      1    0.0%    0.0%  LazyCompile: *hasHooks internal/async_hooks.js:435:18
+      1    0.0%    0.0%  LazyCompile: *get internal/bootstrap/pre_execution.js:310:8
+      1    0.0%    0.0%  LazyCompile: *get _stream_readable.js:1165:8
+      1    0.0%    0.0%  LazyCompile: *get _stream_duplex.js:92:8
+      1    0.0%    0.0%  LazyCompile: *formatNumber internal/util/inspect.js:1383:22
+      1    0.0%    0.0%  LazyCompile: *ensure /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/buffer-writer.js:11:11
+      1    0.0%    0.0%  LazyCompile: *endReadableNT _stream_readable.js:1320:23
+      1    0.0%    0.0%  LazyCompile: *createWriteWrap internal/stream_base_commons.js:106:25
+      1    0.0%    0.0%  LazyCompile: *clearTimeout timers.js:171:22
+      1    0.0%    0.0%  LazyCompile: *addListener events.js:405:58
+      1    0.0%    0.0%  LazyCompile: *addInt16 /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-protocol/dist/buffer-writer.js:30:13
+      1    0.0%    0.0%  LazyCompile: *_storeHeader _http_outgoing.js:360:22
+      1    0.0%    0.0%  LazyCompile: *_handleCommandComplete /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/client.js:358:25
+      1    0.0%    0.0%  LazyCompile: *_getMaxListeners events.js:207:26
+      1    0.0%    0.0%  LazyCompile: *Writable.write _stream_writable.js:258:36
+      1    0.0%    0.0%  LazyCompile: *Socket.resume net.js:611:35
+      1    0.0%    0.0%  LazyCompile: *Socket._writeGeneric net.js:759:42
+      1    0.0%    0.0%  LazyCompile: *Query /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:9:14
+      1    0.0%    0.0%  LazyCompile: *OutgoingMessage _http_outgoing.js:85:25
+      1    0.0%    0.0%  LazyCompile: *EventEmitter events.js:64:22
+      1    0.0%    0.0%  LazyCompile: *<anonymous> internal/console/constructor.js:327:10
+      1    0.0%    0.0%  LazyCompile: *<anonymous> /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-pool/index.js:350:18
+
+ [C++]:
+   ticks  total  nonlib   name
+   5384   54.6%   83.3%  epoll_wait
+    406    4.1%    6.3%  __libc_write
+     93    0.9%    1.4%  __libc_read
+     67    0.7%    1.0%  __GI___writev
+     27    0.3%    0.4%  epoll_ctl
+     19    0.2%    0.3%  __GI___shutdown
+     15    0.2%    0.2%  __GI___libc_write
+     14    0.1%    0.2%  __pthread_mutex_unlock_usercnt
+     13    0.1%    0.2%  __pthread_cond_signal
+     12    0.1%    0.2%  _int_malloc
+     11    0.1%    0.2%  __GI___libc_malloc
+      7    0.1%    0.1%  cfree@GLIBC_2.2.5
+      7    0.1%    0.1%  accept4
+      7    0.1%    0.1%  __GI___mprotect
+      5    0.1%    0.1%  operator delete(void*)
+      4    0.0%    0.1%  unlink_chunk.isra.0
+      4    0.0%    0.1%  fwrite
+      4    0.0%    0.1%  do_futex_wait.constprop.0
+      4    0.0%    0.1%  __pthread_cond_timedwait
+      4    0.0%    0.1%  __lll_lock_wait
+      3    0.0%    0.0%  sysmalloc
+      3    0.0%    0.0%  _int_free
+      2    0.0%    0.0%  operator new(unsigned long)
+      2    0.0%    0.0%  __GI___libc_realloc
+      1    0.0%    0.0%  std::ostream::sentry::~sentry()
+      1    0.0%    0.0%  __pthread_cond_broadcast
+      1    0.0%    0.0%  __errno_location
+      1    0.0%    0.0%  __clock_gettime
+      1    0.0%    0.0%  __GI___pthread_getspecific
+      1    0.0%    0.0%  __GI___munmap
+
+ [Summary]:
+   ticks  total  nonlib   name
+    336    3.4%    5.2%  JavaScript
+   6123   62.1%   94.7%  C++
+    106    1.1%    1.6%  GC
+   3396   34.4%          Shared libraries
+      5    0.1%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    406   75.5%    4.1%  __libc_write
+     67   12.5%    0.7%  __GI___writev
+     14    2.6%    0.1%  __GI___libc_write
+      9    1.7%    0.1%  __GI___libc_malloc
+      8    1.5%    0.1%  _int_malloc
+      6    1.1%    0.1%  __pthread_mutex_unlock_usercnt
+      4    0.7%    0.0%  fwrite
+      4    0.7%    0.0%  cfree@GLIBC_2.2.5
+      4    0.7%    0.0%  __GI___mprotect
+      3    0.6%    0.0%  sysmalloc
+      3    0.6%    0.0%  operator delete(void*)
+      2    0.4%    0.0%  unlink_chunk.isra.0
+      2    0.4%    0.0%  __lll_lock_wait
+      1    0.2%    0.0%  std::ostream::sentry::~sentry()
+      1    0.2%    0.0%  operator new(unsigned long)
+      1    0.2%    0.0%  _int_free
+      1    0.2%    0.0%  __pthread_cond_signal
+      1    0.2%    0.0%  __errno_location
+      1    0.2%    0.0%  __clock_gettime
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   5384   54.6%  epoll_wait
+
+   3372   34.2%  /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+   1676   49.7%    /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+    485   28.9%      LazyCompile: *api /home/yehor/Gitlab/distributed-communication-system/lib/server.js:58:13
+    484   99.8%        /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+    484  100.0%          /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+    484  100.0%            LazyCompile: *processTicksAndRejections internal/process/task_queues.js:65:35
+    373   22.3%      LazyCompile: ~runInContext vm.js:135:15
+    373  100.0%        LazyCompile: ~runScript /home/yehor/Gitlab/distributed-communication-system/lib/app.js:64:12
+    373  100.0%          LazyCompile: ~api /home/yehor/Gitlab/distributed-communication-system/lib/server.js:58:13
+    373  100.0%            /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+     84    5.0%      LazyCompile: ~writevGeneric internal/stream_base_commons.js:118:23
+     83   98.8%        LazyCompile: ~Socket._writeGeneric net.js:759:42
+     83  100.0%          LazyCompile: ~Socket._writev net.js:791:36
+     83  100.0%            LazyCompile: ~doWrite _stream_writable.js:367:17
+      1    1.2%        LazyCompile: *clearBuffer _stream_writable.js:493:21
+      1  100.0%          LazyCompile: ~Writable.uncork _stream_writable.js:310:37
+      1  100.0%            LazyCompile: ~end _http_outgoing.js:769:45
+     55    3.3%      LazyCompile: ~handleWriteReq internal/stream_base_commons.js:47:24
+     55  100.0%        LazyCompile: ~writeGeneric internal/stream_base_commons.js:143:22
+     55  100.0%          LazyCompile: ~Socket._writeGeneric net.js:759:42
+     55  100.0%            LazyCompile: ~Socket._write net.js:796:35
+     49    2.9%      LazyCompile: ~<anonymous> /home/yehor/Gitlab/distributed-communication-system/api/getUser.js:1:12
+     31   63.3%        /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+     31  100.0%          /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+     30   96.8%            LazyCompile: *processTicksAndRejections internal/process/task_queues.js:65:35
+      1    3.2%            LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:65:35
+     13   26.5%        LazyCompile: *api /home/yehor/Gitlab/distributed-communication-system/lib/server.js:58:13
+     13  100.0%          /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+     13  100.0%            /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+      5   10.2%        LazyCompile: ~api /home/yehor/Gitlab/distributed-communication-system/lib/server.js:58:13
+      5  100.0%          /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+      5  100.0%            /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+     38    2.3%      LazyCompile: ~_writev internal/worker/io.js:230:10
+     38  100.0%        LazyCompile: ~doWrite _stream_writable.js:367:17
+     38  100.0%          LazyCompile: ~clearBuffer _stream_writable.js:493:21
+     24   63.2%            LazyCompile: *onwrite _stream_writable.js:394:17
+     14   36.8%            LazyCompile: ~onwrite _stream_writable.js:394:17
+     34    2.0%      LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+     30   88.2%        LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:298:29
+      3   10.0%          Script: ~<anonymous> internal/bootstrap/node.js:1:1
+      3   10.0%          Eval: ~<anonymous> http.js:1:1
+      3  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      2    6.7%          Script: ~<anonymous> internal/modules/esm/loader.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      2    6.7%          Eval: ~<anonymous> tls.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      2    6.7%          Eval: ~<anonymous> crypto.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      2    6.7%          Eval: ~<anonymous> _http_client.js:1:1
+      2  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Script: ~<anonymous> stream.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Script: ~<anonymous> internal/worker.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Script: ~<anonymous> internal/url.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Script: ~<anonymous> internal/modules/esm/translators.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Script: ~<anonymous> internal/modules/cjs/helpers.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Script: ~<anonymous> events.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Script: ~<anonymous> buffer.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          LazyCompile: ~setupPrepareStackTrace internal/bootstrap/node.js:251:32
+      1  100.0%            Script: ~<anonymous> internal/bootstrap/node.js:1:1
+      1    3.3%          LazyCompile: ~lazyLoadStreams fs.js:1994:25
+      1  100.0%            LazyCompile: ~get ReadStream fs.js:2101:17
+      1    3.3%          LazyCompile: ~get dns.js:324:8
+      1  100.0%            /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+      1    3.3%          Eval: ~<anonymous> internal/heap_utils.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Eval: ~<anonymous> internal/crypto/keygen.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Eval: ~<anonymous> internal/child_process.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Eval: ~<anonymous> https.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Eval: ~<anonymous> cluster.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1    3.3%          Eval: ~<anonymous> child_process.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      4   11.8%        LazyCompile: ~compileForPublicLoader internal/bootstrap/loaders.js:214:25
+      4  100.0%          LazyCompile: ~loadNativeModule internal/modules/cjs/helpers.js:31:26
+      4  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:704:24
+     34    2.0%      LazyCompile: ~api /home/yehor/Gitlab/distributed-communication-system/lib/server.js:58:13
+     32   94.1%        /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+     29   90.6%          /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+     26   89.7%            LazyCompile: *processTicksAndRejections internal/process/task_queues.js:65:35
+      3   10.3%            LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:65:35
+      1    2.9%        LazyCompile: ~<anonymous> /home/yehor/Gitlab/distributed-communication-system/lib/server.js:107:27
+      1  100.0%          LazyCompile: *emit events.js:263:44
+      1  100.0%            LazyCompile: ~parserOnIncoming _http_server.js:809:26
+      1    2.9%        LazyCompile: *<anonymous> /home/yehor/Gitlab/distributed-communication-system/lib/server.js:107:27
+      1  100.0%          LazyCompile: *emit events.js:263:44
+      1  100.0%            LazyCompile: ~parserOnIncoming _http_server.js:809:26
+     33    2.0%      /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+      8   24.2%        LazyCompile: *processTicksAndRejections internal/process/task_queues.js:65:35
+      5   15.2%        LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:65:35
+      5   15.2%        LazyCompile: ~parseInteger /home/yehor/Gitlab/distributed-communication-system/node_modules/pg-types/lib/textParsers.js:109:28
+      2   40.0%          LazyCompile: *parseRow /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/result.js:62:11
+      2  100.0%            LazyCompile: ~handleDataRow /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:79:16
+      2   40.0%          LazyCompile: *handleDataRow /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:79:16
+      2  100.0%            LazyCompile: ~_handleDataRow /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/client.js:343:17
+      1   20.0%          LazyCompile: ~parseRow /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/result.js:62:11
+      1  100.0%            LazyCompile: ~handleDataRow /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:79:16
+      3    9.1%        LazyCompile: ~runScript /home/yehor/Gitlab/distributed-communication-system/lib/app.js:64:12
+      3  100.0%          LazyCompile: ~api /home/yehor/Gitlab/distributed-communication-system/lib/server.js:58:13
+      3  100.0%            /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+      2    6.1%        LazyCompile: ~FastBuffer internal/buffer.js:951:1
+      2  100.0%          LazyCompile: ~createUnsafeBuffer buffer.js:149:28
+      2  100.0%            LazyCompile: ~createPool buffer.js:158:20
+      2    6.1%        LazyCompile: *formatRaw internal/util/inspect.js:806:19
+      2  100.0%          LazyCompile: *formatValue internal/util/inspect.js:737:21
+      2  100.0%            LazyCompile: *inspect internal/util/inspect.js:283:17
+      2    6.1%        /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+      2  100.0%          LazyCompile: *processTicksAndRejections internal/process/task_queues.js:65:35
+      1    3.0%        Script: ~<anonymous> internal/util/inspect.js:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:298:29
+      1    3.0%        LazyCompile: ~getConstructorName internal/util/inspect.js:537:28
+      1  100.0%          LazyCompile: ~formatRaw internal/util/inspect.js:806:19
+      1  100.0%            LazyCompile: ~formatValue internal/util/inspect.js:737:21
+      1    3.0%        LazyCompile: ~api /home/yehor/Gitlab/distributed-communication-system/lib/server.js:58:13
+      1  100.0%          LazyCompile: ~<anonymous> /home/yehor/Gitlab/distributed-communication-system/lib/server.js:107:27
+      1  100.0%            LazyCompile: *emit events.js:263:44
+      1    3.0%        LazyCompile: ~_writev internal/worker/io.js:230:10
+      1  100.0%          LazyCompile: ~doWrite _stream_writable.js:367:17
+      1  100.0%            LazyCompile: ~clearBuffer _stream_writable.js:493:21
+      1    3.0%        LazyCompile: ~E internal/errors.js:328:11
+      1  100.0%          Script: ~<anonymous> internal/errors.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:265:27
+     30    1.8%      LazyCompile: *processTicksAndRejections internal/process/task_queues.js:65:35
+     22    1.3%      LazyCompile: *formatRaw internal/util/inspect.js:806:19
+     22  100.0%        LazyCompile: *formatValue internal/util/inspect.js:737:21
+     18   81.8%          LazyCompile: *formatProperty internal/util/inspect.js:1681:24
+     18  100.0%            LazyCompile: *formatRaw internal/util/inspect.js:806:19
+      4   18.2%          LazyCompile: *inspect internal/util/inspect.js:283:17
+      4  100.0%            LazyCompile: *dir internal/console/constructor.js:357:6
+     20    1.2%      LazyCompile: *writeOrBuffer _stream_writable.js:334:23
+     12   60.0%        LazyCompile: *_send /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:137:8
+      5   41.7%          LazyCompile: *prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      4   80.0%            LazyCompile: ~submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      1   20.0%            LazyCompile: *submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      3   25.0%          LazyCompile: ~sync /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:169:7
+      3  100.0%            LazyCompile: ~_getRows /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:170:11
+      3   25.0%          LazyCompile: ~bind /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:154:7
+      3  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      1    8.3%          LazyCompile: ~parse /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:149:8
+      1  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      7   35.0%        LazyCompile: *Writable.write _stream_writable.js:258:36
+      7  100.0%          LazyCompile: *prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      5   71.4%            LazyCompile: ~submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      2   28.6%            LazyCompile: *submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      1    5.0%        LazyCompile: *value internal/console/constructor.js:248:20
+      1  100.0%          LazyCompile: *log internal/console/constructor.js:347:6
+      1  100.0%            /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+     35    1.0%    LazyCompile: *clearBuffer _stream_writable.js:493:21
+     34   97.1%      LazyCompile: *onwrite _stream_writable.js:394:17
+     34  100.0%        LazyCompile: ~<anonymous> internal/worker/io.js:250:32
+     34  100.0%          LazyCompile: ~<anonymous> internal/main/worker_thread.js:95:20
+     34  100.0%            LazyCompile: ~<anonymous> internal/event_target.js:316:20
+      1    2.9%      LazyCompile: *end _http_outgoing.js:769:45
+      1  100.0%        LazyCompile: *api /home/yehor/Gitlab/distributed-communication-system/lib/server.js:58:13
+      1  100.0%          /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+      1  100.0%            /home/yehor/.nvm/versions/node/v14.15.1/bin/node
+
+    406    4.1%  __libc_write
+    338   83.3%    LazyCompile: *writeOrBuffer _stream_writable.js:334:23
+    191   56.5%      LazyCompile: *_send /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:137:8
+    108   56.5%        LazyCompile: *prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+     75   69.4%          LazyCompile: ~submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+     74   98.7%            LazyCompile: *query /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/client.js:496:8
+      1    1.3%            LazyCompile: ~_pulseQueryQueue /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/client.js:474:19
+     33   30.6%          LazyCompile: *submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+     33  100.0%            LazyCompile: *query /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/client.js:496:8
+     40   20.9%        LazyCompile: ~parse /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:149:8
+     40  100.0%          LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+     40  100.0%            LazyCompile: ~submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+     16    8.4%        LazyCompile: ~bind /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:154:7
+     16  100.0%          LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+     16  100.0%            LazyCompile: ~submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+     10    5.2%        LazyCompile: ~describe /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:191:11
+     10  100.0%          LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+     10  100.0%            LazyCompile: ~submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      9    4.7%        LazyCompile: ~sync /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:169:7
+      9  100.0%          LazyCompile: ~_getRows /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:170:11
+      9  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      8    4.2%        LazyCompile: ~execute /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:159:10
+      8  100.0%          LazyCompile: ~_getRows /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:170:11
+      8  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+    142   42.0%      LazyCompile: *Writable.write _stream_writable.js:258:36
+    142  100.0%        LazyCompile: *prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+     92   64.8%          LazyCompile: ~submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+     86   93.5%            LazyCompile: *query /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/client.js:496:8
+      6    6.5%            LazyCompile: ~_pulseQueryQueue /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/client.js:474:19
+     50   35.2%          LazyCompile: *submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+     50  100.0%            LazyCompile: *query /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/client.js:496:8
+      5    1.5%      LazyCompile: ~Writable.write _stream_writable.js:258:36
+      5  100.0%        LazyCompile: ~_send /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:137:8
+      3   60.0%          LazyCompile: ~parse /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:149:8
+      3  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      1   20.0%          LazyCompile: ~execute /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:159:10
+      1  100.0%            LazyCompile: ~_getRows /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:170:11
+      1   20.0%          LazyCompile: ~describe /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:191:11
+      1  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+     45   11.1%    LazyCompile: *Socket._writeGeneric net.js:759:42
+     16   35.6%      LazyCompile: *Writable.write _stream_writable.js:258:36
+     15   93.8%        LazyCompile: ~_send /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:137:8
+      7   46.7%          LazyCompile: ~parse /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:149:8
+      7  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      4   26.7%          LazyCompile: ~sync /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:169:7
+      4  100.0%            LazyCompile: ~_getRows /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:170:11
+      2   13.3%          LazyCompile: ~describe /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:191:11
+      2  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      2   13.3%          LazyCompile: ~bind /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:154:7
+      2  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      1    6.3%        LazyCompile: *_getRows /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:170:11
+      1  100.0%          LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      1  100.0%            LazyCompile: *submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+     10   22.2%      LazyCompile: *_send /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:137:8
+      8   80.0%        LazyCompile: ~parse /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:149:8
+      8  100.0%          LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      8  100.0%            LazyCompile: *submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      1   10.0%        LazyCompile: ~describe /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:191:11
+      1  100.0%          LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      1  100.0%            LazyCompile: *submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      1   10.0%        LazyCompile: ~bind /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:154:7
+      1  100.0%          LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      1  100.0%            LazyCompile: *submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+     10   22.2%      LazyCompile: *Socket._write net.js:796:35
+     10  100.0%        LazyCompile: ~writeOrBuffer _stream_writable.js:334:23
+     10  100.0%          LazyCompile: ~Writable.write _stream_writable.js:258:36
+     10  100.0%            LazyCompile: ~_send /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:137:8
+      8   17.8%      LazyCompile: ~Socket._write net.js:796:35
+      8  100.0%        LazyCompile: ~writeOrBuffer _stream_writable.js:334:23
+      8  100.0%          LazyCompile: ~Writable.write _stream_writable.js:258:36
+      8  100.0%            LazyCompile: ~_send /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:137:8
+      1    2.2%      LazyCompile: *writeOrBuffer _stream_writable.js:334:23
+      1  100.0%        LazyCompile: ~Writable.write _stream_writable.js:258:36
+      1  100.0%          LazyCompile: ~_send /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:137:8
+      1  100.0%            LazyCompile: ~parse /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:149:8
+     14    3.4%    LazyCompile: *Writable.write _stream_writable.js:258:36
+     14  100.0%      LazyCompile: ~_send /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:137:8
+      4   28.6%        LazyCompile: ~sync /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:169:7
+      4  100.0%          LazyCompile: ~_getRows /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:170:11
+      4  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      4   28.6%        LazyCompile: ~parse /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:149:8
+      4  100.0%          LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      4  100.0%            LazyCompile: ~submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      3   21.4%        LazyCompile: ~execute /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:159:10
+      3  100.0%          LazyCompile: ~_getRows /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:170:11
+      3  100.0%            LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      2   14.3%        LazyCompile: ~describe /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:191:11
+      2  100.0%          LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      2  100.0%            LazyCompile: ~submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      1    7.1%        LazyCompile: ~bind /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/connection.js:154:7
+      1  100.0%          LazyCompile: ~prepare /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:186:10
+      1  100.0%            LazyCompile: ~submit /home/yehor/Gitlab/distributed-communication-system/node_modules/pg/lib/query.js:143:9
+      9    2.2%    LazyCompile: *clearBuffer _stream_writable.js:493:21
+      9  100.0%      LazyCompile: *onwrite _stream_writable.js:394:17
+      9  100.0%        LazyCompile: ~<anonymous> internal/worker/io.js:250:32
+      9  100.0%          LazyCompile: ~<anonymous> internal/main/worker_thread.js:95:20
+      9  100.0%            LazyCompile: ~<anonymous> internal/event_target.js:316:20
+
