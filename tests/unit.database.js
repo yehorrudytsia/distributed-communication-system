@@ -8,22 +8,18 @@ const app = require('../lib/app.js');
 const Database = require('../lib/queryBuilder.js');
 assert(Database);
 
-const Config = {
-  host: '127.0.0.1',
-  port: 5432,
-  database: 'dcs',
-  user: 'venus',
-  password: 'venus',
-  max: 1,
-};
+const Config = require('../lib/config.js');
 assert(Config);
 
 const PATH = process.cwd();
 
-
 (async () => {
+  const configPath = path.join(PATH, 'config');
+  const config = await new Config(configPath);
+
   setTimeout(async () => {
-    const database = new Database(Config);
+    const databaseConfig = config.units.database;
+    const database = new Database(databaseConfig);
     const empty = 'empty';
     try {
       const user = { login: empty, password: empty, fullName: empty };

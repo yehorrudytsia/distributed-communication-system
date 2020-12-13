@@ -1,37 +1,29 @@
-'use strict';
+const { Client } = require('pg');
 
-const buildAPI = methods => {
-  const api = {};
-  for (const method of methods) {
-    api[method] = (args = {}) => new Promise((resolve, reject) => {
-      const url = `/api/${method}`;
-      console.log(url, args);
-      fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(args),
-      }).then(res => {
-        const { status } = res;
-        if (status === 200) resolve(res.json());
-        else reject(new Error(`Status Code: ${status}`));
-      });
-    });
-  }
-  return api;
-};
+const pgclient = new Client({
+    host: process.env.POSTGRES_HOST,
+    port: process.env.POSTGRES_PORT,
+    user: 'postgres',
+    password: 'postgres',
+    database: 'postgres'
+});
 
-const api = buildAPI([
-  'getUser',
-  'signIn',
-]);
+pgclient.connect();
 
-const getUser = async () => {
-  const signIn = await api.signIn({ login: 'berniesanders', password: 'GreenNewDeal' });
-  console.log(signIn);
-  const result = await api.getUser('jacquefresco');
-  const output = document.getElementById('output');
-  console.log(result);
-  output.innerHTML = 'HTTP GET /api/getUser<br>' + JSON.stringify(result);
-};
+const table = 'CREATE TABLE student(id SERIAL PRIMARY KEY, firstName VARCHAR(40) NOT NULL, lastName VARCHAR(40) NOT NULL, age INT, address VARCHAR(80), email VARCHAR(40))'
+const text = 'INSERT INTO student(firstname, lastname, age, address, email) VALUES($1, $2, $3, $4, $5) RETURNING *'
+const values = ['Mona the', 'Octocat', 9, '88 Colin P Kelly Jr St, San Francisco, CA 94107, United States', 'octocat@github.com']
 
-getUser();
+pgclient.query(table, (err, res) => {
+    if (err) throw err
+});
+
+pgclient.query(text, values, (err, res) => {
+    if (err) throw err
+});
+
+pgclient.query('SELECT * FROM student', (err, res) => {
+    if (err) throw err
+    console.log(err, res.rows) // Print the data in student table
+    pgclient.end()
+});
