@@ -11,9 +11,9 @@ assert(Database);
 const Config = {
   host: '127.0.0.1',
   port: 5432,
-  database: 'venus',
+  database: 'dcs',
   user: 'venus',
-  password: 'dcs',
+  password: 'venus',
   max: 1,
 };
 assert(Config);
