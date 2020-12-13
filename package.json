@@ -8,7 +8,7 @@
   ],
   "main": "test.js",
   "scripts": {
-    "test": "node tests/main.js",
+    "test": "node --experimental-worker tests/main.js",
     "lint": "eslint ."
   },
   "repository": {
@@ -26,6 +26,7 @@
     "prettier": "1.19.x"
   },
   "dependencies": {
+    "autocannon": "^7.0.0",
     "pg": "^8.3.0",
     "ws": "^7.2.5"
   }

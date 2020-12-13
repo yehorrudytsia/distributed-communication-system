@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="login.js"></script>
+    <style src="style.css">
+        #page {
+        display: grid;
+        grid-row-gap: 7px;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "cnt"
+            ;
+        background-color: #96DBE8;
+        border : 7px solid #96DBE8;
+        height: 670px;
+        width: 1470px;
+        }
+
+
+}
+
+#content {
+    grid-area: cnt;
+    border : 5px solid #00AEAD;
+
+    background-color: #B8E4EF;
+    height: 670px;
+    width: 1470px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+        #loginForm {
+            height: 670px;
+            width: 700px;
+            display: flex;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <div id="page">
+        <div id="content">
+            <div id="loginForm">
+                <div id="output"></div>
+                <a>Login: </a>
+                <input id="logLoginInput" style="">
+                <a>Password: </a>
+                <input id="logPasswordInput" style=""><br>
+                <input type="button" value="sign in" onclick="login()"><br>
+            </div>
+        </div>
+    </div>
+    
+        
+          
+                    
+
+
+
+</body>
+
+</html>

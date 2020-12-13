@@ -4,4 +4,5 @@ module.exports = {
   database: 'dcs',
   user: 'venus',
   password: 'venus',
+  max: 1,
 };
