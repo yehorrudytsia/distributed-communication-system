@@ -20,9 +20,6 @@ assert(Config);
 
 const PATH = process.cwd();
 
-//const SystemUsers = 'CREATE TABLE SystemUsers ( Id        serial, Login     varchar(64) NOT NULL, Password  varchar(255) NOT NULL, FullName  varchar(255))'
-//const systemusers = 'CREATE TABLE SystemUsers ( Id        serial, Login     varchar(64) NOT NULL, Password  varchar(255) NOT NULL, FullName  varchar(255))'
-
 
 (async () => {
   setTimeout(async () => {
