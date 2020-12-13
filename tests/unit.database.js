@@ -8,7 +8,14 @@ const app = require('../lib/app.js');
 const Database = require('../lib/queryBuilder.js');
 assert(Database);
 
-const Config = require('../lib/config.js');
+const Config = {
+  host: '127.0.0.1',
+  port: 5432,
+  database: 'postgres',
+  user: 'postgres',
+  password: 'postgres',
+  max: 1,
+};
 assert(Config);
 
 const PATH = process.cwd();
