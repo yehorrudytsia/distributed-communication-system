@@ -11,9 +11,9 @@ assert(Database);
 const Config = {
   host: '127.0.0.1',
   port: 5432,
-  database: 'postgres',
-  user: 'postgres',
-  password: 'postgres',
+  database: 'venus',
+  user: 'venus',
+  password: 'dcs',
   max: 1,
 };
 assert(Config);
@@ -30,7 +30,7 @@ const SystemUsers = 'CREATE TABLE SystemUsers ( Id        serial, Login     varc
     const empty = 'empty';
     try {
       const user = { login: empty, password: empty, fullName: empty };
-      const result = await database.insert(SystemUsers, user);
+      const result = await database.insert('SystemUsers', user);
       assert(result);
       assert.equal(result.rowCount, 1);
     } catch (err) {
