@@ -20,8 +20,8 @@ assert(Config);
 
 const PATH = process.cwd();
 
-const SystemUsers = 'CREATE TABLE SystemUsers ( Id        serial, Login     varchar(64) NOT NULL, Password  varchar(255) NOT NULL, FullName  varchar(255))'
-const systemusers = 'CREATE TABLE SystemUsers ( Id        serial, Login     varchar(64) NOT NULL, Password  varchar(255) NOT NULL, FullName  varchar(255))'
+//const SystemUsers = 'CREATE TABLE SystemUsers ( Id        serial, Login     varchar(64) NOT NULL, Password  varchar(255) NOT NULL, FullName  varchar(255))'
+//const systemusers = 'CREATE TABLE SystemUsers ( Id        serial, Login     varchar(64) NOT NULL, Password  varchar(255) NOT NULL, FullName  varchar(255))'
 
 
 (async () => {
@@ -30,7 +30,7 @@ const systemusers = 'CREATE TABLE SystemUsers ( Id        serial, Login     varc
     const empty = 'empty';
     try {
       const user = { login: empty, password: empty, fullName: empty };
-      const result = await database.insert('SystemUsers', user);
+      const result = await database.insert(SystemUsers, user);
       assert(result);
       assert.equal(result.rowCount, 1);
     } catch (err) {
