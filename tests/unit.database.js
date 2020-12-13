@@ -21,12 +21,8 @@ assert(Config);
 const PATH = process.cwd();
 
 (async () => {
-  const configPath = path.join(PATH, 'config');
-  const config = await new Config(configPath);
-
   setTimeout(async () => {
-    const databaseConfig = config.units.database;
-    const database = new Database(databaseConfig);
+    const database = new Database(Config);
     const empty = 'empty';
     try {
       const user = { login: empty, password: empty, fullName: empty };
