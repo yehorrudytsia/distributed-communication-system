@@ -1,5 +1,5 @@
 async ({ login, password }) => {
-  const user = await app.sessions.getUser(login);
+  const user = await app.storage.getUser(login);
   console.dir(user);
   const hash = user ? user.password : undefined;
   const correctPass = await app.Crypto.checkPassword(password, hash);

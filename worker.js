@@ -9,6 +9,7 @@ const App = require('./lib/app.js');
 const Config = require('./lib/config.js');
 const Database = require('./lib/queryBuilder.js');
 const Server = require('./lib/server.js');
+const StorageAccess = require('./lib/storage.js');
 const Sessions = require('./lib/sessions.js');
 const stats = require('./domain/getStatistics.js');
 const bytestoSize = require('./domain/bytestoSize.js');
@@ -21,11 +22,11 @@ const resourceMonitoring = require('./init/logMonitoring.js');
   const app = new App();
   Object.assign(app, { config });
   setTimeout(() => {
-
     app.db = new Database(config.units.database, app);
+    app.storage = new StorageAccess(app.db, app);
     app.server = new Server(config.units.server, app);
     app.sessions = Sessions(app);
-    app.sandboxInject({ sessions: app.sessions, stats, bytestoSize });
+    app.sandboxInject({ sessions: app.sessions, storage: app.storage, stats, bytestoSize });
     app.sandbox = app.createSandbox();
     app.sessions.fillVMPool();
     console.log(`Application up in worker ${threadId}`);
