@@ -1,3 +1,4 @@
+/*
 'use strict';
 
 const buildAPI = methods => {
@@ -35,3 +36,4 @@ const getUser = async () => {
 };
 
 getUser();
+*/
