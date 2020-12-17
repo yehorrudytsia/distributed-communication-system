@@ -23,7 +23,7 @@ const resourceMonitoring = require('./init/logMonitoring.js');
   Object.assign(app, { config });
   setTimeout(() => {
     app.db = new Database(config.units.database, app);
-    app.storage = new StorageAccess(app.db, app);
+    app.storage = new StorageAccess(app.db);
     app.server = new Server(config.units.server, app);
     app.sessions = Sessions(app);
     app.sandboxInject({ sessions: app.sessions, storage: app.storage, stats, bytestoSize });
