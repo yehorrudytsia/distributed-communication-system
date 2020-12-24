@@ -1,10 +1,10 @@
 'use strict';
 
-const { Pool } = require('pg');
+import { Pool } from 'pg';
 
 const OPERATORS : string [] = ['>=', '<=', '<>', '>', '<'];
 
-const where = (conditions : any, firstArgIndex = 1) : object => {
+const where = (conditions : any, firstArgIndex = 1) : any => {
   const clause : string [] = [];
   const args : any = [];
   let i : number = firstArgIndex;
@@ -31,7 +31,7 @@ const where = (conditions : any, firstArgIndex = 1) : object => {
   return { clause: clause.join(' AND '), args };
 };
 
-const updates = (delta : any, firstArgIndex : number = 1) : object => {
+const updates = (delta : any, firstArgIndex : number = 1) : any => {
   const clause : string [] = [];
   const args : any = [];
   let i : number = firstArgIndex;
@@ -94,8 +94,8 @@ class Database {
   }
 
   update(table, delta = null, conditions = null) : any{
-    const upd : object = updates(delta);
-    const cond : object = where(conditions, upd.args.length + 1);
+    const upd : any = updates(delta);
+    const cond : any = where(conditions, upd.args.length + 1);
     const sql : string = `UPDATE ${table} SET ${upd.clause} WHERE ${cond.clause}`;
     const args : any = [...upd.args, ...cond.args];
     return this.query(sql, args);
