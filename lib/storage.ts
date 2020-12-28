@@ -1,14 +1,14 @@
-class Storage2{
+class Storage2 {
 
     db: any;
     constructor(db: any) {
- 
+
         this.db = db;
     }
 
 
     getUser(login : any) : any {
-      
+
         let result : any = this.db
         .select('SystemUsers', ['Id', 'Password', 'Fullname'], { login })
         .then(([user]) => user);

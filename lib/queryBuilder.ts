@@ -73,19 +73,19 @@ class Database {
     return this.query(sql, data);
   }
 
-  async select(table, fields = ['*'], conditions = null) : Promise <any>{
+  async select(table, fields = ['*'], conditions = null) : Promise<any> ((resolve, reject) {
     const keys : string = fields.join(', ');
     const sql : string  = `SELECT ${keys} FROM ${table}`;
     let whereClause : string = '';
     let args : any= [];
     if (conditions) {
-      const whereData : any= where(conditions);
+      const whereData : any = where(conditions);
       whereClause  = ' WHERE ' + whereData.clause;
       args = whereData.args;
     }
     const res : any = await this.query(sql + whereClause, args);
     return res.rows;
-  }
+  })
 
   delete(table, conditions = null) : any {
     const { clause, args } : any = where(conditions);

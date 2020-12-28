@@ -26,6 +26,7 @@
     "prettier": "1.19.x"
   },
   "dependencies": {
+    "@types/es6-promise": "^3.3.0",
     "autocannon": "^7.0.0",
     "pg": "^8.3.0",
     "ws": "^7.2.5"
