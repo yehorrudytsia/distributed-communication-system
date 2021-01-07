@@ -1,6 +1,6 @@
-async ({ userId, text, subject }) => {
-  const record = { userId, text, subject };
-  const queryResult = app.database
+async ({ userId, data, subject }) => {
+  const record = { userId, data, subject };
+  const queryResult = app.db
     .insert('Posts', record);
   if (queryResult) return { result: 'success' };
 }

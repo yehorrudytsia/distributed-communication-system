@@ -23,15 +23,22 @@ const buildAPI = methods => {
 const api = buildAPI([
   'getUser',
   'signIn',
+  'addPost',
+  'userPosts',
+  'posts'
 ]);
 
-const getUser = async () => {
+const main = async () => {
   const signIn = await api.signIn({ login: 'berniesanders', password: 'GreenNewDeal' });
   console.log(signIn);
-  const result = await api.getUser('jacquefresco');
-  const output = document.getElementById('output');
+
+  //const text = 'With Democrats in control of the Senate, we must keep faith with the working families of this country. Promises made must be kept. That means not only the $2,000 direct payment, but an aggressive agenda that recognizes the economic desperation facing so many Americans.';
+  //const subject = 'Politics'
+//  const result = await api.addPost({ data: text, subject: subject});
+
+  const result = await api.posts()
   console.log(result);
-  output.innerHTML = 'HTTP GET /api/getUser<br>' + JSON.stringify(result);
+
 };
 
-getUser();
+main();

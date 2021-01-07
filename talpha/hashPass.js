@@ -34,7 +34,7 @@ const hashPassword = password => new Promise((resolve, reject) => {
   });
 });
 
-const pass = 'yehor'
+const pass = 'fresco'
 const main = async pass => {
   const hash = await hashPassword(pass)
   console.log(hash);
