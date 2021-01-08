@@ -6,9 +6,9 @@ const OPERATORS : string [] = ['>=', '<=', '<>', '>', '<'];
 
 const where = (conditions : any, firstArgIndex = 1) : any => {
   const clause : string [] = [];
-  const args : any = [];
+  const args : unknown[] = [];
   let i : number = firstArgIndex;
-  const keys : any = Object.keys(conditions);
+  const keys : string[] = Object.keys(conditions);
   for (const key of keys) {
     let operator : string = '=';
     let value : any = conditions[key];
