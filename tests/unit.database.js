@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = require('../lib/app.js');
 
-const Database = require('../lib/queryBuilder.js');
+const Database = require('../lib/dist/queryBuilder.js');
 assert(Database);
 
 const Config = require('../lib/config.js');
