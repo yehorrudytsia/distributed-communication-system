@@ -38,13 +38,11 @@ const addMessageDiv = async (obj, event) => {
 
 const loadPosts = async () => {
   const data = await api.nameById();
-  console.log(data);
   const userName = data.data[0].login;
   const userNameDiv = document.getElementById("userName")
   userNameDiv.innerHTML += "<p style='margin-left: 10px; color: black'>𝙉𝙖𝙢𝙚 : " + userName +  "  </p>" ;
   const result = await api.userPosts()
   const posts = result.userPosts
-  console.log(posts)
 
 
         for (let i = posts.length-1; i >= 0; --i) {

@@ -26,7 +26,8 @@ const api = buildAPI([
   'addPost',
   'userPosts',
   'posts',
-  'userById'
+  'userById',
+  'nameById'
 ]);
 
 
@@ -145,7 +146,7 @@ function probability(str) {
 
 const addMessage = async () => {
       event.preventDefault()
-      console.log(111)
+      console.log('userName: ' + userName)
       let data = document.getElementById("newMessage").value
       console.log(data)
       const subject = probability(data)
@@ -158,7 +159,7 @@ const addMessageDiv = async (obj, event) => {
         let userName = login.data[0].login;
         let messagesDiv = document.getElementById("messages");
         let messageContent = obj.data;
-        let messageSubject = obj.subject; 
+        let messageSubject = obj.subject;
 
 
         messagesDiv.innerHTML += "<div style='background: linear-gradient(to top right, white, #eceded);><p style='font-size:22px;'>@" + userName +
