@@ -3,98 +3,112 @@
 <head>
   <meta charset="utf-8">
   <title>Green New App</title>
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-  <meta http-equiv="cache-control" content="max-age=800" />
-  <meta http-equiv="cache-control" content="Private" />
-<!--<link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-icon-180x180.png"> -->
-<link rel="icon" type="image/png" sizes="32x32" href="img/newlogo.png">
-<link rel="icon" type="image/png" sizes="16x16" href="img/newlogo.png">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#FF0000"/>
-<meta name="mobile-web-app-capable" content="yes">
-<link rel="manifest" href="/manifest.json" />
-<link type="text/css" href="/styles/styles.css" rel="stylesheet">
 </head>
 <body>
 
 
-<style>
-   
-    #page{
-        
-        display: grid;
-        grid-template-columns: 1fr 6fr;
-        grid-template-areas:
-            "sm cnt";
-        
-        background-color: #96DBE8;
-        height: 690px;
-        width: 1500px;
-    }
-    
-    #sidemenu{
-        grid-area: sm;
-        height: 690px;
-        background-color: #4BB3B6;
-    }
-    #content{
-        grid-area: cnt;
-        display: grid;
-        height: 690px;
-        background-color: #9BDAD6;
-        grid-template-rows: 2fr 9fr;
-        grid-template-areas:
-            "am"
-            "ms"
-            ;
-    }
-    
- 
-</style>
+  <style>
 
-    
+       #page{
 
-<div id="page">
+          display: grid;
+          grid-template-columns: 1fr 6fr 1fr;
+          grid-template-areas:
+              "sm cnt ssm";
 
 
-    <div id="sidemenu">
-        <ul>
-	       <li><a href="">Home</a></li>
-           <li><a href="">Notifications</a></li>
-	       <li><a href="">Messages</a></li>
-	       <li><a href="">Profile</a></li>
-	       <li><a href="">Settings</a></li>
-        </ul>
-    </div>
-    <div id="content">
-        <div id="userInfo">
-            <div id="userName"></div>
-        
-        </div>
-        
-    </div>
-    
-</div>
+          height: 690px;
+          width: 1500px;
+      }
 
-    
+      #sidemenu{
+          grid-area: sm;
+          height: 690px;
+
+          background: linear-gradient(to top,#63bfc2, #80f3f7);
+
+      }
+      #content{
+          grid-area: cnt;
+
+      }
+
+      #secondsidemenu{
+          grid-area: ssm;
+          height: 690px;
+
+          background: linear-gradient(to top, #80f3f7, #63bfc2);
+      }
+
+      #userInfo{
+
+          display: grid;
+          height: 690px;
+          background: linear-gradient(to top right,#36D8FF, #80f3f7);
+          grid-template-rows: 4fr 9fr;
+          grid-template-areas:
+              "un"
+              "ms"
+              ;
+      }
+      #userName{
+          grid-area: un;
+
+
+
+      }
+      #messages{
+          grid-area: ms;
+          overflow-y: scroll;
+
+      }
+
+
+      li{
+          list-style-type: none;
+      }
+      a{
+          text-decoration: none;
+      }
+  </style>
+
+
+
+  <div id="page">
+
+
+      <div id="sidemenu">
+          <ul>
+              <li><a href="../index.html"><p style="font: 16pt Arial; color: white; ">𝗛𝗼𝗺𝗲</p></a></li>
+
+              <li><a href=""><p style="font-size: 12pt;">𝗣𝗿𝗼𝗳𝗶𝗹𝗲</p></a></li>
+
+              <li><a href="login.html"><p style="font-size: 12pt;">𝗟𝗼𝗴𝗶𝗻</p></a></li>
+              <li><a href="registration.html"><p style="font-size: 12pt;">𝗥𝗲𝗴𝗶𝘀𝘁𝗿𝗮𝘁𝗶𝗼𝗻</p></a></li>
+
+           </ul>
+      </div>
+      <div id="content">
+          <div id="userInfo">
+              <div id="userName"></div>
+              <div id="messages" ></div>
+          </div>
+
+      </div>
+      <div id="secondsidemenu"></div>
+
+  </div>
+
+
 
 
 <!--<center>
   <h1>Progressive Web Application</h1>
   by TeamA organization<br/>
 <img src="img/green.jpg" alt="logo image" />
-</center> --> 
-    <script>
-        
-      let userName = "user123"; // read from database  
-     let userNameDiv = document.getElementById("userName")
-     userNameDiv.innerText = "Name : " + userName
-    
-    </script>
+</center> -->
+    <script src="profile.js"></script>
 
 </body>
-    
+
 </html>

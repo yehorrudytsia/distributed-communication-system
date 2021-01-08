@@ -7,9 +7,9 @@ const { threadId } = worker;
 
 const App = require('./lib/app.js');
 const Config = require('./lib/config.js');
-const Database = require('./lib/queryBuilder.js');
+const Database = require('./lib/dist/queryBuilder.js');
 const Server = require('./lib/server.js');
-const StorageAccess = require('./lib/storage.js');
+const StorageAccess = require('./lib/dist/storage.js');
 const Sessions = require('./lib/sessions.js');
 const stats = require('./domain/getStatistics.js');
 const bytestoSize = require('./domain/bytestoSize.js');

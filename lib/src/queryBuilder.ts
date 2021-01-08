@@ -1,17 +1,24 @@
 'use strict';
 
+interface obj{
+  length: number,
+  query : (string, any) => any,
+  join : (any) => any,
+  keys : any,
+}
+
 import { Pool } from 'pg';
 
 const OPERATORS : string [] = ['>=', '<=', '<>', '>', '<'];
 
-const where = (conditions : any, firstArgIndex = 1) : any => {
+const where = (conditions : object, firstArgIndex = 1) : object => {
   const clause : string [] = [];
   const args : unknown[] = [];
   let i : number = firstArgIndex;
   const keys : string[] = Object.keys(conditions);
   for (const key of keys) {
     let operator : string = '=';
-    let value : any = conditions[key];
+    let value : string = conditions[key];
     if (typeof value === 'string') {
       for (const op of OPERATORS) {
         const len : number = op.length;
@@ -33,7 +40,7 @@ const where = (conditions : any, firstArgIndex = 1) : any => {
 
 const updates = (delta : any, firstArgIndex : number = 1) : any => {
   const clause : string [] = [];
-  const args : any = [];
+  const args : unknown[] = [];
   let i : number = firstArgIndex;
   const keys : any = Object.keys(delta);
   for (const key of keys) {
@@ -44,22 +51,24 @@ const updates = (delta : any, firstArgIndex : number = 1) : any => {
   return { clause: clause.join(', '), args };
 };
 
+
+
 class Database {
-    pool : any
-    application : any
-  constructor(config : any, application: any) {
+    pool :any
+    application : object
+  constructor(config : any, application: object) {
     this.pool = new Pool(config);
     this.application = application;
   }
 
-  query(sql : string, values : any) : any{
+  query(sql : string, values : string[]) : any{
     const data : string = values ? values.join(',') : '';
     console.log(`${sql}\t[${data}]`);
     return this.pool.query(sql, values);
   }
 
-  insert(table, record) : any{
-    const keys : any = Object.keys(record);
+  insert(table, record) : object{
+    const keys : string[] = Object.keys(record);
     const nums : string []= new Array(keys.length);
     const data : any [] = new Array(keys.length);
     let i = 0;
@@ -73,19 +82,19 @@ class Database {
     return this.query(sql, data);
   }
 
-  async select(table, fields = ['*'], conditions = null) : Promise<any> ((resolve, reject) {
+  async select(table, fields = ['*'], conditions = null) : Promise <any>{
     const keys : string = fields.join(', ');
     const sql : string  = `SELECT ${keys} FROM ${table}`;
     let whereClause : string = '';
-    let args : any= [];
+    let args : string[]= [];
     if (conditions) {
-      const whereData : any = where(conditions);
+      const whereData : any= where(conditions);
       whereClause  = ' WHERE ' + whereData.clause;
       args = whereData.args;
     }
     const res : any = await this.query(sql + whereClause, args);
     return res.rows;
-  })
+  }
 
   delete(table, conditions = null) : any {
     const { clause, args } : any = where(conditions);
@@ -97,7 +106,7 @@ class Database {
     const upd : any = updates(delta);
     const cond : any = where(conditions, upd.args.length + 1);
     const sql : string = `UPDATE ${table} SET ${upd.clause} WHERE ${cond.clause}`;
-    const args : any = [...upd.args, ...cond.args];
+    const args : string[] = [...upd.args, ...cond.args];
     return this.query(sql, args);
   }
 
